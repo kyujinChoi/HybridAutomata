@@ -22,7 +22,7 @@ HA_example->setState(int State_id, void* function)
 ```
 ####   Set Condition
 ```c++
-Condition_Start_2_Finish *cond_example = new Condition_Start_2_Finish();
+Condition_pre_2_post *cond_example = new Condition_pre_2_post();
 HA_example->setState(int pre_State_id, Condition cond_example, int post_State_id);
 ```
 ## Example Folder
