@@ -8,7 +8,7 @@ Advisor : Kim Kang-hee
 
 Soongsil Univ., Department of Smart Systems Software, Rubicom Laboratory
 ## What is Hybrid Automata?
-  **Finite state machine** with a finite set of continuous variables whose values are described by a set of ordinary differential euqtions
+  Wikipedia, **Finite state machine** with a finite set of continuous variables whose values are described by a set of ordinary differential equations
 
 ##   Usage
 ### 
