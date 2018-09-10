@@ -9,6 +9,7 @@ Advisor : Kim Kang-hee
 Soongsil Univ., Department of Smart Systems Software, Rubicom Laboratory
 ## What is Hybrid Automata?
   **Finite state machine** with a finite set of continuous variables whose values are described by a set of ordinary differential euqtions
+
 ##   Usage
 ### 
 ```c++
@@ -24,3 +25,11 @@ HA_example->setState(int State_id, void* function)
 Condition_Start_2_Finish *cond_example = new Condition_Start_2_Finish();
 HA_example->setState(int pre_State_id, Condition cond_example, int post_State_id);
 ```
+## Example Folder
+### Build
+```c
+make clean 
+make
+```
+
+"Main.cpp" is a exmple code for how to use "HybridAutomata" class
