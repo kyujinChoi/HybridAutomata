@@ -1,4 +1,4 @@
-# HybridAutomata
+# HybridAutomata - c++ based state machine framework
 This is a framework for building any kind of FSM. 
 # 
 
