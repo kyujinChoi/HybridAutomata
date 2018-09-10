@@ -10,7 +10,6 @@ class HybridAutomata;
 class Condition
 {
 public:
-  // virtual bool check(HybridAutomata* HA)=0;
   virtual bool check(HybridAutomata *HA) = 0;
 };
 class HybridAutomata
@@ -46,5 +45,4 @@ public:
   HybridAutomata(const unsigned int init, const unsigned int exit);
   HybridAutomata();
   ~HybridAutomata();
-  //bool checkConditions(unsigned int post);
 };

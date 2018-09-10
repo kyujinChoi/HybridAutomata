@@ -97,7 +97,6 @@ void HybridAutomata::setCondition(unsigned int preState, Condition *cDo, unsigne
 }
 void HybridAutomata::operate()
 {
-   //cout<<"inoperate func beforeState : "<<curState<<endl;
    curState = checkConditions();
    //cout<<"Condition satisfied! curState = "<<curState<<endl;
    states[curState]->aDo();
@@ -109,24 +108,7 @@ bool HybridAutomata::checkStateMachine(unsigned int pre, unsigned int post)
     else
         return false;
 }
-/*
-bool HybridAutomata::checkConditions(unsigned int post)
-{
-    bool isAvail = false;
-    if (checkStateMachine(curState, post) == false)
-    {
-        curState=post;
-        Condition *cand = conditions[curState][post];
 
-        if (cand == NULL)
-            return true;
-        isAvail = cand->check(this);
-        if (isAvail == true)
-            return true;
-    }
-    return false;
-}
-*/
 int HybridAutomata::checkConditions()
 {
     
@@ -151,38 +133,12 @@ int HybridAutomata::checkConditions()
       temp = temp % idx;
       
       cand = conditions[curState][candidateArr[temp]];
-      //printf("cand : %d\n",candidateArr[temp]);
       if(cand == NULL) return candidateArr[temp];
       isAvail = cand->check(this);
       if (isAvail == true) return candidateArr[temp];
 
       ++temp;
    }
-/*
-   int candNum = 0;
-   bool isEmpty;
-   bool isAvail = false;
-   int candidateArr[MAX_STATES];
-   Condition *cand;
-   for (int i = initState; i <= exitState; i++)
-   {
-       isEmpty = checkStateMachine(curState, i);
-       if (isEmpty == false)
-       {
-           candNum++;
-           cand = conditions[curState][i];
-           if (cand == NULL)
-               return i;
-           isAvail = cand->check(this);
-           if (isAvail == true)
-               return i;
-       }
-   }
-   if(candNum==0) printf("[HybridAutomata] No Conditions\n");
-   printf("There is no Candidate State!\n");
-   return curState;
-  */ 
-
 }
 HybridAutomata::~HybridAutomata()
 {
