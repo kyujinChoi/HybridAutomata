@@ -63,23 +63,26 @@ public:
 
 ///////////////////// States //////////////////////
 
-void behavior_off()
+int behavior_off()
 {
     cout<<"##############\n";
     cout<<"# Switch Off #\n";
     cout<<"##############\n\n";
+    return 2;
 }
-void behavior_on()
+int behavior_on()
 {
     cout<<"#############\n";
     cout<<"# Switch On #\n";
     cout<<"#############\n\n";
+    return 3;
 }
-void behavior_finish()
+int behavior_finish()
 {
     cout<<"#############\n";
     cout<<"# Bye Bye~~ #\n";
     cout<<"#############\n\n";
+    return 1;
 }
 
 ///////////////////////////////////////////////////
@@ -107,6 +110,7 @@ void init_state_machine_for_EXAMPLE()
 
 int main()
 {
+  int result = -1;
     init_state_machine_for_EXAMPLE();
     
     while(1)
@@ -114,9 +118,10 @@ int main()
       cout << "--------------------------------------\n";
       cout << "press any key + enter, to toggle switch('q' to quit)\n";
       key_input = getchar();
-      myFlush();
+      //myFlush();
 
-      HA_example->operate();
+      result = HA_example->operate();
+      printf("result = %d\n",result);
       if(HA_example -> curState == FINISH) break;
     }
 }

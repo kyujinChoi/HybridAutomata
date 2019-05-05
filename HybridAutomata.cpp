@@ -62,7 +62,7 @@ void HybridAutomata::initConditionsArr()
     }
 }
 
-void HybridAutomata::setState(unsigned int id, void (*ah)())
+void HybridAutomata::setState(unsigned int id, int (*ah)())
 {
     if (id > exitState)
     {
@@ -95,11 +95,11 @@ void HybridAutomata::setCondition(unsigned int preState, Condition *cDo, unsigne
     else
         cout << "this condition has already declared" << endl;
 }
-void HybridAutomata::operate()
+int HybridAutomata::operate()
 {
    curState = checkConditions();
    //cout<<"Condition satisfied! curState = "<<curState<<endl;
-   states[curState]->aDo();
+   return states[curState]->aDo();
 }
 bool HybridAutomata::checkStateMachine(unsigned int pre, unsigned int post)
 {

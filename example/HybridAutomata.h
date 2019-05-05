@@ -19,8 +19,8 @@ private:
   {
   public:
     unsigned int stateId;
-    void (*aDo)();
-    State(unsigned int id, void (*ah)())
+    int (*aDo)();
+    State(unsigned int id, int (*ah)())
     {
       stateId = id;
       aDo = ah;
@@ -39,9 +39,9 @@ private:
 
 public:
   unsigned int curState;
-  void setState(unsigned int id, void (*ah)());                                     // user sets states
+  void setState(unsigned int id, int (*ah)());                                     // user sets states
   void setCondition(unsigned int preState, Condition *cDo, unsigned int postState); //user sets conditions
-  void operate(); // check conditions and if condition has satisfied move to another state
+  int operate(); // check conditions and if condition has satisfied move to another state
   HybridAutomata(const unsigned int init, const unsigned int exit);
   HybridAutomata();
   ~HybridAutomata();
