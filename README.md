@@ -1,4 +1,4 @@
-# HybridAutomata - c++ based state machine framework
+# C++ based state machine framework
 This is a framework for building any kind of FSM. 
 # 
 
@@ -7,8 +7,6 @@ Advisor : Kim Kang-hee
 1st Contributor : Choi Kyu-Jin 
 
 Soongsil Univ., Department of Smart Systems Software, Rubicom Laboratory
-## What is Hybrid Automata?
-  Wikipedia, "**Finite state machine** with a finite set of continuous variables whose values are described by a set of ordinary differential equations"
 
 ##   Usage
 ### 
